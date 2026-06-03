@@ -35,4 +35,4 @@ npm run dev
 - Uprava filmu
 - Smazani filmu
 - Filtrovani podle zanru
-- Validace formulare pres `react-hook-form` a `Zod`
+
