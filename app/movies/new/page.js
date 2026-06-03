@@ -7,7 +7,7 @@ export default function NewMoviePage() {
     <main className="page-shell">
       <Header />
       <section className={styles.formPage}>
-        <h1>Pridat film</h1>
+        <h1>Přidat film</h1>
         <NewMovieClient />
       </section>
     </main>

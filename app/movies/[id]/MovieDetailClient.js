@@ -15,7 +15,7 @@ export default function MovieDetailClient({ id }) {
     const loadMovie = async () => {
       if (!hasSupabaseConfig) {
         setIsLoading(false);
-        setError("Dopln Supabase konfiguraci do .env.local.");
+        setError("Doplň Supabase konfiguraci do .env.local.");
         return;
       }
 
@@ -39,7 +39,7 @@ export default function MovieDetailClient({ id }) {
   }, [id]);
 
   if (isLoading) {
-    return <p className="status">Nacitam detail filmu...</p>;
+    return <p className="status">Načítám detail filmu...</p>;
   }
 
   if (error) {
@@ -54,18 +54,18 @@ export default function MovieDetailClient({ id }) {
     <section className={styles.detail}>
       <h1>{movie.title}</h1>
       <dl>
-        <dt>Reziser</dt>
+        <dt>Režisér</dt>
         <dd>{movie.director}</dd>
         <dt>Rok</dt>
-        <dd>{movie.year || "Nezadano"}</dd>
-        <dt>Zanr</dt>
-        <dd>{movie.genre || "Nezadano"}</dd>
-        <dt>Hodnoceni</dt>
-        <dd>{movie.rating ?? "Nezadano"}</dd>
+        <dd>{movie.year || "Nezadáno"}</dd>
+        <dt>Žánr</dt>
+        <dd>{movie.genre || "Nezadáno"}</dd>
+        <dt>Hodnocení</dt>
+        <dd>{movie.rating ?? "Nezadáno"}</dd>
       </dl>
       <div className={styles.actions}>
         <Link className="ghost-button" href="/movies">
-          Zpet na seznam
+          Zpět na seznam
         </Link>
         <Link className="button" href={`/movies/${movie.id}/edit`}>
           Upravit

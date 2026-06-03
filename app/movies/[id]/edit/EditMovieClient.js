@@ -15,7 +15,7 @@ export default function EditMovieClient({ id }) {
     const loadMovie = async () => {
       if (!hasSupabaseConfig) {
         setIsLoading(false);
-        setError("Dopln Supabase konfiguraci do .env.local.");
+        setError("Doplň Supabase konfiguraci do .env.local.");
         return;
       }
 
@@ -60,7 +60,7 @@ export default function EditMovieClient({ id }) {
   };
 
   if (isLoading) {
-    return <p className="status">Nacitam film...</p>;
+    return <p className="status">Načítám film...</p>;
   }
 
   if (!movie && error) {
@@ -70,7 +70,7 @@ export default function EditMovieClient({ id }) {
   return (
     <MovieForm
       defaultValues={movie}
-      submitLabel="Ulozit zmeny"
+      submitLabel="Uložit změny"
       onSubmit={handleSubmit}
       error={error}
     />

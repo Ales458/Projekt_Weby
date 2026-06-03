@@ -10,7 +10,7 @@ export default function DeleteMovieButton({ id }) {
   const [isDeleting, setIsDeleting] = useState(false);
 
   const handleDelete = async () => {
-    const confirmed = window.confirm("Opravdu chces film smazat?");
+    const confirmed = window.confirm("Opravdu chceš film smazat?");
 
     if (!confirmed) {
       return;
@@ -35,7 +35,7 @@ export default function DeleteMovieButton({ id }) {
   return (
     <div>
       <button className="danger-button" type="button" onClick={handleDelete} disabled={isDeleting}>
-        {isDeleting ? "Mazu..." : "Smazat film"}
+        {isDeleting ? "Mažu..." : "Smazat film"}
       </button>
       {error ? <p className="error">{error}</p> : null}
     </div>
