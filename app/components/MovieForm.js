@@ -33,13 +33,13 @@ export default function MovieForm({ defaultValues, submitLabel, onSubmit, error 
       {error ? <p className="error">{error}</p> : null}
 
       <label className={styles.field}>
-        <span>Nazev filmu</span>
+        <span>Název filmu</span>
         <input {...register("title")} placeholder="Interstellar" />
         {errors.title ? <small>{errors.title.message}</small> : null}
       </label>
 
       <label className={styles.field}>
-        <span>Reziser</span>
+        <span>Režisér</span>
         <input {...register("director")} placeholder="Christopher Nolan" />
         {errors.director ? <small>{errors.director.message}</small> : null}
       </label>
@@ -52,20 +52,20 @@ export default function MovieForm({ defaultValues, submitLabel, onSubmit, error 
         </label>
 
         <label className={styles.field}>
-          <span>Hodnoceni</span>
+          <span>Hodnocení</span>
           <input {...register("rating")} inputMode="decimal" placeholder="9" />
           {errors.rating ? <small>{errors.rating.message}</small> : null}
         </label>
       </div>
 
       <label className={styles.field}>
-        <span>Zanr</span>
+        <span>Žánr</span>
         <input {...register("genre")} placeholder="Sci-fi" />
         {errors.genre ? <small>{errors.genre.message}</small> : null}
       </label>
 
       <button className="button" type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "Ukladam..." : submitLabel}
+        {isSubmitting ? "Ukládám..." : submitLabel}
       </button>
     </form>
   );

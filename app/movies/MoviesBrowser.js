@@ -15,7 +15,7 @@ export default function MoviesBrowser() {
     const loadMovies = async () => {
       if (!hasSupabaseConfig) {
         setIsLoading(false);
-        setError("Dopln NEXT_PUBLIC_SUPABASE_URL a NEXT_PUBLIC_SUPABASE_ANON_KEY do .env.local.");
+        setError("Doplň NEXT_PUBLIC_SUPABASE_URL a NEXT_PUBLIC_SUPABASE_ANON_KEY do .env.local.");
         return;
       }
 
@@ -48,22 +48,20 @@ export default function MoviesBrowser() {
       <section className={styles.heading}>
         <div>
           <h1>Filmy</h1>
-          <p>Seznam filmu ulozenych v Supabase databazi. Vyber zanr pro rychle filtrovani.</p>
+          <p>Vyber žánr pro rychlé filtrování.</p>
         </div>
-        <Link className="button" href="/movies/new">
-          Pridat film
-        </Link>
+        
       </section>
 
-      {isLoading ? <p className="status">Nacitam filmy...</p> : null}
+      {isLoading ? <p className="status">Načítám filmy...</p> : null}
       {error ? <p className="error">{error}</p> : null}
 
       {!isLoading && !error ? (
         <>
           <label className={styles.filter}>
-            <span>Filtrovat podle zanru</span>
+            <span>Filtrovat podle žánru</span>
             <select value={genre} onChange={(event) => setGenre(event.target.value)}>
-              <option value="all">Vsechny zanry</option>
+              <option value="all">Všechny žánry</option>
               {genres.map((item) => (
                 <option key={item} value={item}>
                   {item}
@@ -73,7 +71,7 @@ export default function MoviesBrowser() {
           </label>
 
           {visibleMovies.length === 0 ? (
-            <p className="status">Zatim tu nejsou zadne filmy.</p>
+            <p className="status">Zatím tu nejsou žádné filmy.</p>
           ) : (
             <div className={styles.grid}>
               {visibleMovies.map((movie) => (
@@ -84,7 +82,7 @@ export default function MoviesBrowser() {
                     {movie.year ? `, ${movie.year}` : ""}
                   </p>
                   <p className={styles.meta}>
-                    {movie.genre || "Bez zanru"} | Hodnoceni: {movie.rating ?? "nezadano"}
+                    {movie.genre || "Bez žánru"} | Hodnocení: {movie.rating ?? "nezadáno"}
                   </p>
                   <div className={styles.actions}>
                     <Link className="ghost-button" href={`/movies/${movie.id}`}>

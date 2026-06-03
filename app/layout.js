@@ -1,8 +1,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Knihovna filmu",
-  description: "Sprava filmove knihovny pres Next.js a Supabase",
+  title: "Knihovna filmů",
+  description: "Správa filmové knihovny přes Next.js a Supabase",
 };
 
 export default function RootLayout({ children }) {

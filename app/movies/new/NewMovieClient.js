@@ -11,7 +11,7 @@ export default function NewMovieClient() {
 
   const handleSubmit = async (values) => {
     if (!hasSupabaseConfig) {
-      setError("Dopln Supabase konfiguraci do .env.local.");
+      setError("Doplň Supabase konfiguraci do .env.local.");
       return;
     }
 
@@ -39,5 +39,5 @@ export default function NewMovieClient() {
     router.refresh();
   };
 
-  return <MovieForm submitLabel="Ulozit film" onSubmit={handleSubmit} error={error} />;
+  return <MovieForm submitLabel="Uložit film" onSubmit={handleSubmit} error={error} />;
 }

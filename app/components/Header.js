@@ -4,14 +4,14 @@ export default function Header() {
   return (
     <header className="topbar">
       <Link className="brand" href="/">
-        Knihovna filmu
+        Knihovna filmů
       </Link>
-      <nav className="nav" aria-label="Hlavni navigace">
+      <nav className="nav" aria-label="Hlavní navigace">
         <Link className="ghost-button" href="/movies">
           Filmy
         </Link>
         <Link className="button" href="/movies/new">
-          Pridat film
+          Přidat film
         </Link>
       </nav>
     </header>
