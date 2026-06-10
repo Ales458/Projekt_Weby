@@ -19,6 +19,14 @@
   max-width: 620px;
 }
 
+.filters {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
 .filter {
   display: grid;
   gap: 8px;
@@ -26,10 +34,31 @@
   max-width: 320px;
 }
 
+.filters .filter {
+  flex: 1 1 260px;
+  margin-bottom: 0;
+}
+
+.searchFilters {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  flex: 2 1 420px;
+}
+
+.searchFilters .filter:first-child {
+  flex: 0 1 180px;
+}
+
+.searchFilters .filter:last-child {
+  flex: 1 1 240px;
+}
+
 .filter span {
   font-weight: 800;
 }
 
+.filter input,
 .filter select {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -114,6 +143,16 @@
 
 @media (max-width: 680px) {
   .heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .filters {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .searchFilters {
     align-items: stretch;
     flex-direction: column;
   }
